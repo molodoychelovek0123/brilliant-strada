@@ -20,3 +20,6 @@ function initFormSubmit(){
         addToCart($(this).find('input[name=name]').val(), $(this).serialize());
     });
 }
+
+
+

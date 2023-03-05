@@ -147,6 +147,9 @@ function initProductSlider() {
 
             direction: 'horizontal',
             slidesPerView: 1,
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            loop: true,
             // spaceBetween: 32,
             spaceBetween: 0,
             mousewheel: true,
@@ -159,6 +162,7 @@ function initProductSlider() {
                 slideChange: function () {
                     setTimeout(() => {
                         let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex+=1;
                         activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
 
                         let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
@@ -169,6 +173,7 @@ function initProductSlider() {
                 resize: function () {
                     setTimeout(() => {
                         let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex+=1;
                         activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
 
                         let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
