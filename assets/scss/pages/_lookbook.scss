@@ -17,3 +17,17 @@
     }
   }
 }
+
+.lookbook-slider{
+  .swiper-wrapper{
+    display: flex;
+    width: fit-content;
+    max-height: 42vh;
+  }
+  .slider__nav {
+    width: fit-content;
+    .slider__prev,  .slider__next {
+      margin: 0 10px;
+    }
+  }
+}

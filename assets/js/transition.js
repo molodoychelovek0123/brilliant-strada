@@ -36,7 +36,7 @@ function changePageTo(url){
 }
 function parseLink(link) {
     if(link.indexOf("/") === 0) {
-        let baseUrl = location.href.substring(0, location.href.lastIndexOf('/'));
+        let baseUrl = siteDomain;
         if (link.indexOf('/') > -1) {
             link = link.substring(link.lastIndexOf('/'));
         } else {

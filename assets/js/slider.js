@@ -74,7 +74,7 @@ function initProductSlider() {
     const musicSection = ".important-option";
     if (document.querySelector(musicSection) != null) {
 
-        const sliderImages = new Swiper(musicSection + ' .swiper-container', {
+        const sliderMusic = new Swiper(musicSection + ' .swiper-container', {
 
             direction: 'horizontal',
             slidesPerView: 1,
@@ -137,6 +137,58 @@ function initProductSlider() {
         });
         jQuery('.media-modal .close').on('click',function (){
             jQuery('.media-modal').removeClass('active');
+        });
+    }
+
+    const lookbookSection = ".lookbook-slider";
+    if (document.querySelector(lookbookSection) != null) {
+
+        const sliderLookbook = new Swiper(lookbookSection + ' .swiper-container', {
+
+            direction: 'horizontal',
+            slidesPerView: 1,
+            // spaceBetween: 32,
+            spaceBetween: 0,
+            mousewheel: true,
+
+            navigation: {
+                nextEl: lookbookSection + ' .slider__next',
+                prevEl: lookbookSection + ' .slider__prev'
+            },
+            on: {
+                slideChange: function () {
+                    setTimeout(() => {
+                        let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
+
+                        let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+                        slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
+                        document.querySelector(lookbookSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+                    }, 300);
+                },
+                resize: function () {
+                    setTimeout(() => {
+                        let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
+
+                        let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+                        slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
+                        document.querySelector(musicSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+                    }, 300);
+                }
+
+
+            },
+            grabCursor: true,
+            breakpoints: {
+                0: {
+                    direction: 'horizontal',
+                },
+                768: {
+                    direction: 'horizontal',
+                    slidesPerView: 3,
+                }
+            }
         });
     }
 
