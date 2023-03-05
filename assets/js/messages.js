@@ -10,7 +10,6 @@ function initMessageContainer() {
     $('.message-container').on('click', function (event) {
         $(event.target).remove();
     })
-
 }
 
 function showMessage(type, message, code, inScreen = true) {

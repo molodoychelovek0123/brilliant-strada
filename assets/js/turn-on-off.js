@@ -1,3 +1,19 @@
+function hidePreloader(){
+    let css = '.preloader{display: none !important;}',
+        head = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+
+    head.appendChild(style);
+
+    style.type = 'text/css';
+    if (style.styleSheet){
+        // This is required for IE8 and below.
+        style.styleSheet.cssText = css;
+    } else {
+        style.appendChild(document.createTextNode(css));
+    }
+}
+
 
     let SELECTOR_SCREEN_ELEMENT = '.screen-container';
     // var SELECTOR_SWITCHER_TV = '#switcher-tv';
@@ -34,6 +50,17 @@
         timeline.reverse();
     }
 
+    function runLoader(){
+        document.querySelector('.preloader').classList.add('animated');
+        setTimeout(()=>{
+
+            document.querySelector('.preloader').classList.add('hidden');
+            setTimeout(()=>{
+                hidePreloader();
+            },1000);
+        },3100)
+    }
+
     function toggleSwitcherTV() {
         if (isTurnedOn) {
             turnOff();
@@ -52,6 +79,9 @@
         setTimeout(()=>{
             document.querySelector('.screen-container').classList.remove('not-ready');
             turnOn();
+            setTimeout(()=>{
+                runLoader();
+            }, 800);
         },1000);
     }
     // $(document).ready(buildTimeline);
