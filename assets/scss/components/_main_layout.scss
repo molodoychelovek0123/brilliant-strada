@@ -1,0 +1,21 @@
+.page{
+  display: flex;
+  height: 100vh;
+  max-height: 100vh;
+  .content{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    @media #{$large-up}{
+      width: calc(100% - 240px);
+    }
+  }
+  .menu{
+    display: none;
+    z-index: 100;
+    @media #{$large-up}{
+      display: flex;
+      width: 240px;
+    }
+  }
+}

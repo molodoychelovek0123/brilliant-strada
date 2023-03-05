@@ -1,0 +1,19 @@
+.lookbook{
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item{
+    flex: 0 0 calc(25% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}

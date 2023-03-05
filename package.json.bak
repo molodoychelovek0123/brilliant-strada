@@ -1,0 +1,33 @@
+{
+  "name": "Brilliant Strada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^9.4.2",
+    "node-sass": "latest",
+    "onchange": "^5.2.0",
+    "postcss-cli": "latest"
+  },
+  "scripts": {
+    "build:sass": "node-sass --output-style=expanded --source-map=true assets/scss/style.scss assets/css/style.css --style compressed",
+    "prefix": "npm run build:sass && postcss assets/css/style.css --use=autoprefixer --output=assets/css/style.css --style compressed",
+    "start": "onchange \"assets/scss/**/*.scss\" -- npm run prefix"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Repo/Path"
+  },
+  "keywords": [
+    "SASS"
+  ],
+  "author": "Ismail Farooq",
+  "license": "ISC",
+  "homepage": "Path",
+  "dependencies": {
+    "emoji-js": "^3.6.0"
+  }
+}

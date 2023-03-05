@@ -1,0 +1,75 @@
+header{
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  .row{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: $header-height-desktop;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+      padding: 15px 0;
+    }
+    .big-title{
+      filter: blur(1px);
+      color: #e1eef6;
+      text-shadow: -1px -1px green, -2px -3px red;
+    }
+    .cart{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      p {
+        font-family: 'Classic Console Neue', 'ClassicConsoleNeue', sans-serif;
+        color: #e1eef6;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        span{
+          font-family: inherit;
+          &.badge{
+            position: relative;
+            height: 1em;
+            width: 1em;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNiAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjI2NjYgNC41VjEwLjVIMTQuNTE2NlYxMkgxMy43NjY2VjEyLjc1SDEzLjAxNjZWMTMuNUgxMi4yNjY2VjE0LjI1SDEwLjc2NjZWMTVINC43NjY2VjE0LjI1SDMuMjY2NlYxMy41SDIuNTE2NlYxMi43NUgxLjc2NjZWMTJIMS4wMTY2VjEwLjVIMC4yNjY2MDJWNC41SDEuMDE2NlYzSDEuNzY2NlYyLjI1SDIuNTE2NlYxLjVIMy4yNjY2VjAuNzVINC43NjY2VjBIMTAuNzY2NlYwLjc1SDEyLjI2NjZWMS41SDEzLjAxNjZWMi4yNUgxMy43NjY2VjNIMTQuNTE2NlY0LjVIMTUuMjY2NlpNMTIuMjY2NiAzLjc1VjNIMTEuNTE2NlYyLjI1SDEwLjAxNjZWMS41SDUuNTE2NlYyLjI1SDQuMDE2NlYzSDMuMjY2NlYzLjc1SDIuNTE2NlY1LjI1SDEuNzY2NlY5Ljc1SDIuNTE2NlYxMS4yNUgzLjI2NjZWMTJINC4wMTY2VjEyLjc1SDUuNTE2NlYxMy41SDEwLjAxNjZWMTIuNzVIMTEuNTE2NlYxMkgxMi4yNjY2VjExLjI1SDEzLjAxNjZWOS43NUgxMy43NjY2VjUuMjVIMTMuMDE2NlYzLjc1SDEyLjI2NjZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .text{
+              font-size: 0.6em;
+            }
+          }
+        }
+
+      }
+
+      .cart-open{
+        opacity: 0;
+        transition: all .3s ease-in-out;
+      }
+      .cart-close{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        transition: all .3s ease-in-out;
+      }
+      &[data-count="0"]{
+        .cart-open{
+          opacity: 1;
+        }
+        .cart-close{
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

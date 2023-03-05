@@ -1,0 +1,596 @@
+<!--
+Добавил Header
+Добавил Корзина
+Добавил menu
+Добавил Новые стили
+Добавил js
+Добавил одну тудушку на slider__fraction
+Добавлено два message-container
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- TODO: for Игорь Новый css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<!-- TODO: for Игорь
+ У меня вопросик ебать.
+ Ты же понимаешь что структура всех страниц одинаковая и если она изменится, то изменится везде???
+ То есть .page>.menu - статична для всех страниц и лучше бы вынести в отдельный шаблон
+         .page>.content>.background - тоже вынести в отдельный шаблон
+         .page>.screen-container.not-ready>.screen>header - статична
+
+         Внутренности самого сайта начинаются только в .scrollable-mask
+
+ Пожалуйста, сделай это иначе при редактировании сайта придется 1036132871368231 раз менять хедер
+
+ -->
+<div class="page">
+    <div class="content">
+        <div class="background">
+            <div class="frame">
+
+                <picture>
+                    <source srcset="./assets/img/frame-desktop.png"
+                            media="(min-width: 600px)">
+                    <img src="./assets/img/frame.png" alt="">
+                </picture>
+
+            </div>
+        </div>
+        <!--  TODO: for Игорь. Тут вот гифка, ее надо будет заменять из бэка  -->
+        <div class="screen-container not-ready" style="background-image: url(https://i.gifer.com/RpdC.gif);">
+            <!-- TODO:// Добавить возможность добавлять видео-->
+            <div class="screen">
+                <header>
+                    <div class="row">
+                        <a href="/" class="logo">
+                            <img src="assets/img/logo.png" alt="Logotype">
+                        </a>
+                        <h1 class="big-title">About Us</h1>
+                        <!-- TODO: for Игорь Новая корзина -->
+                        <!-- Здесь нужно будет добавить число кол-во товаров в два места в data-count и в span.text -->
+                        <a href="/cart.html"
+                           class="cart" data-count="0">
+                            <img src="assets/img/cart.png" alt="Cart" class="cart-open">
+                            <img src="assets/img/cart-close.png" alt="Cart" class="cart-close">
+                            <p class="h2">
+
+                                <span>CART</span>
+                                <span class="badge">
+                                    <span class="text"> 0 </span>
+                                </span>
+                            </p>
+                        </a>
+                    </div>
+                </header>
+                <div class="scrollable-mask">
+                    <div class="product-page masked-content">
+                        <section class="slider">
+                            <div class="container">
+                                <div class="slider__flex">
+                                    <div class="slider__col">
+
+
+                                        <div class="slider__thumbs">
+                                            <div class="swiper-container">
+
+                                                <!-- Эти swiper-wrapper одинаковые, можешь выделить их в отдельную функцию -->
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" data-swiper-slide-index="0">
+                                                        <div class="slider__image glitched">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve3.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve3.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <!-- TODO:// Если вдруг будет сильное желание сделать обработчик для мобилки. Если мобилка грузить мобильное изображение в бекграуд. Но я думаю это уже на беке -->
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve3.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="1">
+
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve1.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve1.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve1.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="2">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve4.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve4.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve4.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="3">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve2.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve2.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve2.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="4">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve3.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve3.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve3.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="5">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve4.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve4.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve4.png');"></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="slider__images">
+                                        <div class="slider__square">
+                                            <div class="swiper-container">
+                                                <!-- Эти swiper-wrapper одинаковые, можешь выделить их в отдельную функцию -->
+                                                <div class="swiper-wrapper">
+                                                    <div class="swiper-slide" data-swiper-slide-index="0">
+                                                        <div class="slider__image glitched">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve3.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve3.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+
+                                                            <!-- TODO:// Если вдруг будет сильное желание сделать обработчик для мобилки. Если мобилка грузить мобильное изображение. Но я думаю это уже на беке -->
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve3.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="1">
+
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve1.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve1.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve1.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="2">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve4.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve4.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve4.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="3">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve2.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve2.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve2.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="4">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve3.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve3.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve3.png');"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide" data-swiper-slide-index="5">
+                                                        <div class="slider__image">
+                                                            <picture>
+                                                                <source srcset="./assets/img/longsleeve4.png"
+                                                                        media="(min-width: 600px)">
+                                                                <!-- TODO:// Ссылка на мобильную картинку -->
+                                                                <img src="./assets/img/longsleeve4.png"
+                                                                     alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                                            </picture>
+                                                            <div class="glitch"
+                                                                 style="background-image:url('assets/img/longsleeve4.png');"></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slider__nav">
+
+                                            <div class="slider__prev"></div>
+
+                                            <!-- TODO: for Igor Добавить подсчет кол-ва слайдов и добавить текст внутрь slider__fraction -- 01/{{slider.length}} -->
+                                            <div class="slider__fraction">
+
+                                            </div>
+
+                                            <div class="slider__next"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <div class="scrollable-content">
+                            <h1>LONG-SLEEVE</h1>
+                            <h2 class="h1">$230</h2>
+                            <p>100% Cotton 300 gsm with pitch effect<br>
+                                Colour: black<br>
+                                Serigraphy with puff<br>
+                                Custom zippers<br>
+                                Detachable sleeve set<br></p>
+                            <div class="product-options">
+                                <h3 class="product-options__title">SLEEVES:</h3>
+                                <div class="row">
+                                    <!-- TODO:// Придумать как должны выглядеть items, должны ли это быть тупые ссылки или же придумать иновацонное революционне решение -->
+                                    <!-- TODO:// БЛЯТЬ СНАЧАЛА НУЖНО ПОНЯТЬ ЧТО У НАС ВООБЩЕ МОДИФИКАЦИИ А ЧТО У НАС ССЫЛКИ Я ЕБАЛ ЕГО РОТ НИХУЯ НЕ ПОНИМАЮ. МНЕ ФОРМУ КАКОГО РАЗМЕРА ЕБАТЬ ДЕЛАТЬ И НУЖНА ВООБЩЕ ФОРМА ИГОРЮ ИЛИ НЕТ ИЛИ ОН НАХУЙ ВСЕ ЭТО СЛАЛ ИЛИ Я ЭТО ДОЛЖЕН ОБРАБАТЫВАТЬ. У МЕНЯ ЕСТЬ ФАЙЛ add-to-cart.js ТАМ ЕБАТЬ НАБРОСКИ МОЕГО ВИДЕНЬЯ НО ИГОРЬ МОЖЕТ ПОСЛАТЬ МЕНЯ НАХУЙ ТАК ЧТО ПОШЕЛ Я НАХУЙ  -->
+                                    <a class="product-options__item active" href="/product.html">
+                                        <img src="assets/img/longsleeve3.png" alt="Тут должно быть SEO ;c">
+                                    </a>
+                                    <a class="product-options__item" href="/product.html">
+                                        <img src="assets/img/longsleeve3.png" alt="Тут должно быть SEO ;c">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- TODO: for Igor Изменил продукт акшенс -->
+                            <form class="product-actions">
+                                <input type="hidden" name="name" value="LONG-SLEEVE">
+                                <input type="hidden" name="id" value="3132">
+                                <label for="size"></label>
+                                <select name="size" id="size">
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                </select>
+                                <input type="submit" value="ADD TO CART" class="h1">
+                            </form>
+                            <!-- TODO: for Игорь. Тут я удалил один бесполезный параграф. Это не важно, не обращай сюда внимания-->
+                            <p class="product-description">
+                                Description: Oversize sweater made of spun woolen fabric. Round neck and long sleeves.
+                                Orisible stitching of the top and a characteristic branded label on the back with zigzag
+                                embroidery. Woolen fabric. Round neck and long sleeves. Visible stitching of the top and
+                                a characteristic
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--   TODO: for Игорь Добавлено два message-container. Внутренности можешь удалить -->
+                    <div class="message-container">
+                        <div class="message INFO">
+                            <div class="close">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.375 8.4375H10.3125V9.375H11.25V11.25H9.375V10.3125H8.4375V9.375H6.5625V10.3125H5.625V11.25H3.75V9.375H4.6875V8.4375H5.625V6.5625H4.6875V5.625H3.75V3.75H5.625V4.6875H6.5625V5.625H8.4375V4.6875H9.375V3.75H11.25V5.625H10.3125V6.5625H9.375V8.4375ZM14.0625 15H0.9375V14.0625H0V0.9375H0.9375V0H14.0625V0.9375H15V14.0625H14.0625V15ZM1.875 1.875V13.125H13.125V1.875H1.875Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="text h3">
+                                [INFO] LONG SLEEVE (with large corduroy sleeve) added to cart
+                            </div>
+                        </div>
+                        <div class="message ERROR">
+                            <div class="close">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.375 8.4375H10.3125V9.375H11.25V11.25H9.375V10.3125H8.4375V9.375H6.5625V10.3125H5.625V11.25H3.75V9.375H4.6875V8.4375H5.625V6.5625H4.6875V5.625H3.75V3.75H5.625V4.6875H6.5625V5.625H8.4375V4.6875H9.375V3.75H11.25V5.625H10.3125V6.5625H9.375V8.4375ZM14.0625 15H0.9375V14.0625H0V0.9375H0.9375V0H14.0625V0.9375H15V14.0625H14.0625V15ZM1.875 1.875V13.125H13.125V1.875H1.875Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="text h3">
+                                [ERROR] LONG SLEEVE (with large corduroy sleeve) added to cart
+                            </div>
+                        </div>
+                        <div class="message SUCCESS">
+                            <div class="close">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.375 8.4375H10.3125V9.375H11.25V11.25H9.375V10.3125H8.4375V9.375H6.5625V10.3125H5.625V11.25H3.75V9.375H4.6875V8.4375H5.625V6.5625H4.6875V5.625H3.75V3.75H5.625V4.6875H6.5625V5.625H8.4375V4.6875H9.375V3.75H11.25V5.625H10.3125V6.5625H9.375V8.4375ZM14.0625 15H0.9375V14.0625H0V0.9375H0.9375V0H14.0625V0.9375H15V14.0625H14.0625V15ZM1.875 1.875V13.125H13.125V1.875H1.875Z"
+                                          fill="white"/>
+                                </svg>
+                            </div>
+                            <div class="text h3">
+                                [SUCCESS] LONG SLEEVE (with large corduroy sleeve) added to cart
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <!-- TODO: for Игорь Новое меню -->
+        <div class="menu-links">
+
+            <a href="/" class="menu-links__item">
+                <img src="assets/img/menu-home.gif" alt="А где ALT text?">
+                <span>HOME</span>
+            </a>
+            <a href="/" class="menu-links__item">
+                <img src="assets/img/menu-shop.gif" alt="А где ALT text?">
+                <span>SHOP</span>
+            </a>
+            <a href="/" class="menu-links__item">
+                <img src="assets/img/menu-lookbook.gif" alt="А где ALT text?">
+                <span>LOOKBOOK</span>
+            </a>
+
+            <a href="/" class="menu-links__item">
+                <img src="assets/img/menu-about.gif" alt="А где ALT text?">
+                <span>ABOUT</span>
+            </a>
+
+        </div>
+        <div class="menu-controls" style="   width: 100%;">
+            <div class="row">
+                <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.51724 0.696429V1.39286H5.58621H4.65517V1.85714V2.32143H3.9569H3.25862V3.01786V3.71429H2.56034H1.86207V4.64286V5.57143H1.39655H0.931034V6.73214V7.89286H0.465517H0V12.3036V16.7143H0.465517H0.931034V17.875V19.0357H1.39655H1.86207V20.1964V21.3571H2.56034H3.25862V22.0536V22.75H3.72414H4.18966V23.4464V24.1429H5.35345H6.51724V24.6071V25.0714H7.68103H8.84483V25.5357V26H12.1034H15.3621V25.3036V24.6071H14.431H13.5V24.1429V23.6786H13.0345H12.569V22.75V21.8214H13.0345H13.5V20.8929V19.9643H15.3621H17.2241V20.1964V20.4286H18.3879H19.5517V20.6607V20.8929H20.7155H21.8793V21.5893V22.2857H20.7155H19.5517V22.75V23.2143H19.0862H18.6207V23.6786V24.1429H17.9224H17.2241V24.6071C17.2241 25.0436 17.2055 25.0714 16.9914 25.0714C16.7772 25.0714 16.7586 25.0993 16.7586 25.5357V26H17.2241H17.6897V25.5357V25.0714H18.8534H20.0172V24.375V23.6786H21.4138H22.8103V22.9821V22.2857H23.5086H24.2069V21.5893V20.8929H24.6724H25.1379V20.1964V19.5H25.6034H26.069V18.3393V17.1786H26.5345H27V15.0893V13H26.3017H25.6034V13.9286V14.8571H24.9052H24.2069V12.5357V10.2143H24.6724H25.1379V7.19643V4.17857H24.6724H24.2069V3.71429V3.25H23.2759H22.3448V3.71429V4.17857H22.8103H23.2759V6.5V8.82143H22.8103H22.3448V7.89286V6.96429H21.6466C20.9669 6.96429 20.9483 6.97357 20.9483 7.19643C20.9483 7.41 20.9203 7.42857 20.4828 7.42857H20.0172V6.73214V6.03571H20.7155H21.4138V5.10714V4.17857H20.9483H20.4828V4.64286V5.10714H19.7845H19.0862V4.41071V3.71429H18.6207H18.1552V3.01786V2.32143H17.6897H17.2241V1.625V0.928571H15.8276H14.431V1.16071C14.431 1.38357 14.4124 1.39286 13.7328 1.39286H13.0345V0.928571V0.464286H11.8707H10.7069V1.16071V1.85714H10.0086H9.31034V2.55357V3.25H8.14655H6.98276V2.78571V2.32143H7.44828H7.91379V1.85714V1.39286H8.61207H9.31034V0.696429V0H7.91379H6.51724V0.696429ZM15.3621 4.41071V5.10714H16.0603H16.7586V6.5V7.89286H16.2931H15.8276V7.19643V6.5H15.1293H14.431V5.10714V3.71429H14.8966H15.3621V4.41071ZM8.84483 5.10714V5.57143H9.31034H9.77586V6.03571V6.5H10.2414H10.7069V6.03571V5.57143H11.4052H12.1034V5.10714V4.64286H12.569H13.0345V5.57143V6.5H13.5H13.9655V7.42857V8.35714H12.569H11.1724V9.28571V10.2143H12.3362H13.5V9.75V9.28571H14.431H15.3621V9.75V10.2143H15.8276H16.2931V10.6786V11.1429H15.1293H13.9655V12.3036V13.4643H13.5H13.0345V15.0893V16.7143H12.3362H11.6379V16.25V15.7857H10.4741H9.31034V16.9464V18.1071H10.0086H10.7069V18.5714V19.0357H11.1724H11.6379V19.9643V20.8929H11.1724H10.7069V20.4286V19.9643H10.2414H9.77586V19.5V19.0357H9.07759H8.37931V18.5714V18.1071H7.91379H7.44828V16.7143V15.3214H6.98276H6.51724V14.625V13.9286H6.05172H5.58621V12.3036V10.6786H6.05172H6.51724V9.75V8.82143H6.98276H7.44828V7.42857V6.03571H6.75H6.05172V5.33929V4.64286H7.44828H8.84483V5.10714ZM14.8966 18.1071V18.5714H13.7328H12.569V18.1071V17.6429H13.7328H14.8966V18.1071Z"
+                          fill="white"/>
+                </svg>
+                <div class="btn-container">
+                    <a href="#" class="btn btn3d pressed">
+                        <span class="background">
+                            <span class="back"></span>
+                            <span class="front"></span>
+                        </span>
+                        <span class="text"> ENG </span>
+                    </a>
+                    <a href="#" class="btn btn3d">
+                        <span class="background">
+                            <span class="back"></span>
+                            <span class="front"></span>
+                        </span>
+                        <span class="text"> RUS </span>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.10137 0.851852L21.7973 0V3.83333L9.46849 4.44856V20.5391H8.28493V21.7695H7.10137V23H2.36712V21.7695H1.18356V20.5391H0V15.6173H1.18356V14.3868H2.36712V13.1564H7.10137V0.851852ZM7.10137 16.8477H5.91781V15.6173H3.55068V16.8477H2.36712V19.3086H3.55068V20.5391H5.91781V19.3086H7.10137V16.8477Z"
+                          fill="white"/>
+                    <path d="M21.6329 0H24V19.6872H22.8164V20.9177H21.6329V22.1481H16.8986V20.9177H15.7151V19.6872H14.5315V14.7654H15.7151V13.535H16.8986V12.3045H21.6329V0ZM21.6329 15.9959H20.4493V14.7654H18.0822V15.9959H16.8986V18.4568H18.0822V19.6872H20.4493V18.4568H21.6329V15.9959Z"
+                          fill="white"/>
+                </svg>
+                <div class="btn-container">
+                    <a href="#" class="btn btn3d open-music-controls">
+                        <span class="background">
+                            <span class="back"></span>
+                            <span class="front"></span>
+                        </span>
+                        <span class="text"> PLAY MUSIC </span>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row important-option">
+                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.2778 0H18.0556V1.38889H19.4444V2.77778H20.8333V4.16667H22.2222V5.55556H23.6111V8.33333H25V16.6667H23.6111V19.4444H22.2222V20.8333H20.8333V22.2222H19.4444V23.6111H18.0556V25H15.2778V22.2222H16.6667V20.8333H18.0556V19.4444H19.4444V18.0556H20.8333V15.2778H22.2222V9.72222H20.8333V6.94444H19.4444V5.55556H18.0556V4.16667H16.6667V2.77778H15.2778V0ZM16.6667 6.94444V8.33333H18.0556V11.1111H19.4444V13.8889H18.0556V16.6667H16.6667V18.0556H15.2778V6.94444H16.6667ZM0 8.33333H5.55556V6.94444H6.94444V5.55556H8.33333V4.16667H9.72222V2.77778H11.1111V1.38889H12.5V23.6111H11.1111V22.2222H9.72222V20.8333H8.33333V19.4444H6.94444V18.0556H5.55556V16.6667H0V8.33333ZM2.77778 11.1111V13.8889H6.94444V15.2778H8.33333V16.6667H9.72222V8.33333H8.33333V9.72222H6.94444V11.1111H2.77778Z"
+                          fill="white"/>
+                </svg>
+                <div class="btn-container">
+                    <div class="slider-container">
+                        <div class="notch"></div>
+                        <span class="bar">
+                                <span class="fill">
+                                    <span class="percentage">
+                                    </span>
+		                        </span>
+                        </span>
+                        <label for="slider"></label><input id="slider" class="slider" type="range" min="0" max="100"
+                                                           value="50">
+                    </div>
+                </div>
+                <div class="media-modal" style="">
+                    <div class="close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 9H11V10H12V12H10V11H9V10H7V11H6V12H4V10H5V9H6V7H5V6H4V4H6V5H7V6H9V5H10V4H12V6H11V7H10V9ZM15 16H1V15H0V1H1V0H15V1H16V15H15V16ZM2 2V14H14V2H2Z"
+                                  fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="media-slider">
+                        <audio id="audio1" preload controls src="https://archive.org/download/mythium/BSFM_ATKM.mp3">
+                            Your browser does not support HTML5 Audio! 😢
+                        </audio>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" data-swiper-slide-index="1"
+                                     data-music-src="https://archive.org/download/mythium/BSFM_ATKM.mp3">
+                                    <div class="slider__image">
+                                        <picture>
+                                            <!--    TODO:// Pc image -->
+                                            <source srcset="./assets/img/disc.png"
+                                                    media="(min-width: 600px)">
+                                            <!--    TODO:// mobile image -->
+                                            <img src="./assets/img/disc.png"
+                                                 alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                        </picture>
+
+                                    </div>
+                                    <h2>Название музыки</h2>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="2"
+                                     data-music-src="https://archive.org/download/mythium/BS_ATKM.mp3">
+                                    <div class="slider__image">
+                                        <picture>
+                                            <!--    TODO:// Pc image -->
+                                            <source srcset="./assets/img/disc.png"
+                                                    media="(min-width: 600px)">
+                                            <!--    TODO:// mobile image -->
+                                            <img src="./assets/img/disc.png"
+                                                 alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                        </picture>
+                                    </div>
+
+                                    <h2>Название музыки</h2>
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="3"
+                                     data-music-src="https://archive.org/download/mythium/AC_ATKMTake_2.mp3">
+                                    <div class="slider__image">
+                                        <picture>
+                                            <!--    TODO:// Pc image -->
+                                            <source srcset="./assets/img/disc.png"
+                                                    media="(min-width: 600px)">
+                                            <!--    TODO:// mobile image -->
+                                            <img src="./assets/img/disc.png"
+                                                 alt="Альтернативный текст для SEO пж пж пж Игорь добавь а то меня выебут;c">
+                                        </picture>
+                                    </div>
+                                    <h2>Название музыки</h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.10137 0.851852L21.7973 0V3.83333L9.46849 4.44856V20.5391H8.28493V21.7695H7.10137V23H2.36712V21.7695H1.18356V20.5391H0V15.6173H1.18356V14.3868H2.36712V13.1564H7.10137V0.851852ZM7.10137 16.8477H5.91781V15.6173H3.55068V16.8477H2.36712V19.3086H3.55068V20.5391H5.91781V19.3086H7.10137V16.8477Z"
+                                  fill="white"/>
+                            <path d="M21.6329 0H24V19.6872H22.8164V20.9177H21.6329V22.1481H16.8986V20.9177H15.7151V19.6872H14.5315V14.7654H15.7151V13.535H16.8986V12.3045H21.6329V0ZM21.6329 15.9959H20.4493V14.7654H18.0822V15.9959H16.8986V18.4568H18.0822V19.6872H20.4493V18.4568H21.6329V15.9959Z"
+                                  fill="white"/>
+                        </svg>
+                        <div class="btn-container">
+                            <a href="#" class="btn btn3d btn-play">
+                        <span class="background">
+                            <span class="back"></span>
+                            <span class="front"></span>
+                        </span>
+                                <span class="text">
+                                    <svg class="svg-play" width="6" height="13" viewBox="0 0 6 13" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.33333 13H0L-4.76837e-07 10.4L0 0H1.33333V1.3H2.5V2.6H3.66667V3.9H4.83333V5.2H6V7.8H4.83333V9.1H3.66667V10.4H2.5V11.7H1.33333V13Z"
+                                      fill="white"/>
+                                </svg>
+                                    <svg class="svg-pause" width="5" height="8" viewBox="0 0 5 8" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+<rect width="2" height="8" fill="white"/>
+<rect x="3" width="2" height="8" fill="white"/>
+</svg>
+
+                             </span>
+                            </a>
+                            <div class="slider__nav">
+
+                                <div class="slider__prev"></div>
+                                <!--                                TODO: for Igor Добавить подсчет кол-ва слайдов -->
+                                <div class="slider__fraction">01/03</div>
+
+                                <div class="slider__next"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <!-- Это просто пустой блок, не спрашивай зачем -->
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.2778 0H18.0556V1.38889H19.4444V2.77778H20.8333V4.16667H22.2222V5.55556H23.6111V8.33333H25V16.6667H23.6111V19.4444H22.2222V20.8333H20.8333V22.2222H19.4444V23.6111H18.0556V25H15.2778V22.2222H16.6667V20.8333H18.0556V19.4444H19.4444V18.0556H20.8333V15.2778H22.2222V9.72222H20.8333V6.94444H19.4444V5.55556H18.0556V4.16667H16.6667V2.77778H15.2778V0ZM16.6667 6.94444V8.33333H18.0556V11.1111H19.4444V13.8889H18.0556V16.6667H16.6667V18.0556H15.2778V6.94444H16.6667ZM0 8.33333H5.55556V6.94444H6.94444V5.55556H8.33333V4.16667H9.72222V2.77778H11.1111V1.38889H12.5V23.6111H11.1111V22.2222H9.72222V20.8333H8.33333V19.4444H6.94444V18.0556H5.55556V16.6667H0V8.33333ZM2.77778 11.1111V13.8889H6.94444V15.2778H8.33333V16.6667H9.72222V8.33333H8.33333V9.72222H6.94444V11.1111H2.77778Z"
+                                  fill="white"/>
+                        </svg>
+                        <div class="btn-container">
+                            <a href="#" class="btn btn3d">
+                        <span class="background">
+                            <span class="back"></span>
+                            <span class="front"></span>
+                        </span>
+                                <span class="text">----</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2023 BRST Terms and Conditions <a href="/policy">Privacy Policy</a>
+        </div>
+    </div>
+    <!--   TODO: for Игорь Добавлено два message-container. Внутренности можешь удалить -->
+    <div class="message-container out-of-screen">
+
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+<script src="assets/js/slider.js"></script>
+<script src="assets/js/custom-select.js"></script>
+<script src="assets/js/random-glitch.js"></script>
+<script src="assets/js/music-control.js"></script>
+<script src="assets/js/turn-on-off.js"></script>
+<script src="assets/js/messages.js"></script>
+<script src="assets/js/add-to-cart.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/transition.js"></script>
+
+</body>
+</html>

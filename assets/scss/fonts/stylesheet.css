@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Classic Console Neue';
+    src: local('Classic Console Neue'), local('ClassicConsoleNeue'),
+        url('ClassicConsoleNeue.woff2') format('woff2'),
+        url('ClassicConsoleNeue.woff') format('woff'),
+        url('ClassicConsoleNeue.ttf') format('truetype'),
+        url('ClassicConsoleNeue.svg#ClassicConsoleNeue') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Terminal Grotesque';
+    src: local('Terminal Grotesque Regular'), local('Terminal-Grotesque'),
+        url('Terminal-Grotesque.woff2') format('woff2'),
+        url('Terminal-Grotesque.woff') format('woff'),
+        url('Terminal-Grotesque.ttf') format('truetype'),
+        url('Terminal-Grotesque.svg#Terminal-Grotesque') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

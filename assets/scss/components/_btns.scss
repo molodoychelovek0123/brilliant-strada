@@ -1,0 +1,74 @@
+.btn{
+  &.btn3d{
+    position: relative;
+    font-family: 'Classic Console Neue', 'ClassicConsoleNeue', sans-serif;
+    padding: 8px;
+    border-radius: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    .background{
+      position: absolute;
+      /* display: block; */
+      border-radius: 3px;
+      z-index: -1;
+      .back {
+        background: linear-gradient(180deg, #607CA1 0%, #0D2038 100%);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+      }
+      .front{
+        background: linear-gradient(180deg, rgba(96, 124, 161, 0) 0%, #0D2038 100%);
+        box-shadow: inset 0px -1px 1px 1px rgba(255, 255, 255, 0.2);
+        filter: blur(2px);
+        border-radius: 2px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .3s;
+      }
+    }
+
+    .text{
+      color: #fff;
+      position: relative;
+    }
+    &:active,
+    &:focus,
+    &.pressed{
+      .background{
+        .back{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          border: 1px solid #394657;
+          filter: drop-shadow(0px 0px 11px #000000);
+          border-radius: 3px;
+        }
+        .front{
+          filter: blur(2px);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, #0D2038 0%, #0D2038 100%);
+          box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.5);
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

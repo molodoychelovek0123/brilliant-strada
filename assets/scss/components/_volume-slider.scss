@@ -1,0 +1,92 @@
+.slider-container {
+  position: relative;
+  width: 100%;
+  label{
+    position: fixed;
+    top: -1000px;
+    left: -1000px;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  .bar {
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    width: calc(100% - 2px);
+    height: 27px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #394453;
+    overflow: hidden;
+    .fill {
+      display: block;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(180deg, #607CA1 0%, #122743 100%);
+      box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Classic Console Neue', 'ClassicConsoleNeue', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #FFFFFF;
+      }
+    }
+  }
+  .notch {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &::after {
+      content: " ";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: -1px;
+      width: 1px;
+      height: calc(100% - 15px);
+      z-index: 4;
+      background: red;
+      transform: translateY(-50%);
+    }
+  }
+  .slider {
+    position: relative;
+    z-index: 2;
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 100%;
+    height: 27px;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: calc(27px + 8px);
+      border: 1px solid #394453;
+      background-color: #607CA1;
+      border-radius: 0;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 0 0 0 rgba(98,0,238,.1);
+      transition: .3s ease-in-out;
+      position: relative;
+      top: 1px;
+      z-index: 2;
+    }
+  }
+}
