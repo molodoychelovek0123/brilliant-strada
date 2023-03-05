@@ -263,7 +263,10 @@
       background-repeat: no-repeat;
       background-position: center;
     }
-
+    .slider__fraction{
+      position: relative;
+      top: 3px;
+    }
     .slider__prev {
       transform: rotate(180deg);
     }

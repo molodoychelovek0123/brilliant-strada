@@ -11,14 +11,33 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 60px;
+    max-height: 155px;
+    h3{
+      text-transform: uppercase;
+      position: relative;
+    }
     img{
       width: 100%;
       height: auto;
+      max-height: calc(100% - 20px);
+      object-fit: contain;
+    }
+    .new{
+      text-align: center;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      color: #607CA1;
+      line-height: 130%;
+      position: absolute;
+      bottom: 1em;
+      right: -1em;
     }
   }
 }
 
-.lookbook-slider{
+.lookbook-slider,
+.products-slider{
   .swiper-wrapper{
     display: flex;
     width: fit-content;
@@ -26,8 +45,26 @@
   }
   .slider__nav {
     width: fit-content;
+    margin-top: 45px;
     .slider__prev,  .slider__next {
-      margin: 0 10px;
+      margin: 0 30px;
     }
+  }
+}
+
+.products-slider{
+  .swiper-slide{
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.6);
+    opacity: 0.6;
+    transition: all .5s ease-in-out;
+    &.swiper-slide-active{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .text-content{
+    text-align: center;
   }
 }

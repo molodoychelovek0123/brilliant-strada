@@ -153,6 +153,7 @@ function initProductSlider() {
             // spaceBetween: 32,
             spaceBetween: 0,
             mousewheel: true,
+            loopedSlides: 12,
 
             navigation: {
                 nextEl: lookbookSection + ' .slider__next',
@@ -163,9 +164,11 @@ function initProductSlider() {
                     setTimeout(() => {
                         let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
                         activeIndex+=1;
-                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
 
                         let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+
+                        if(jQuery(productsSection + ' .swiper-slide-active').hasClass('swiper-slide-duplicate')) activeIndex -= slides;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
                         slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
                         document.querySelector(lookbookSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
                     }, 300);
@@ -174,11 +177,13 @@ function initProductSlider() {
                     setTimeout(() => {
                         let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
                         activeIndex+=1;
-                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
 
                         let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+
+                        if(jQuery(productsSection + ' .swiper-slide-active').hasClass('swiper-slide-duplicate')) activeIndex -= slides;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
                         slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
-                        document.querySelector(musicSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+                        document.querySelector(lookbookSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
                     }, 300);
                 }
 
@@ -192,9 +197,76 @@ function initProductSlider() {
                 768: {
                     direction: 'horizontal',
                     slidesPerView: 3,
+                    loop: document.querySelectorAll(lookbookSection + ' .swiper-slide').length > 3 * 2
                 }
             }
         });
+    }
+
+
+    const productsSection = ".products-slider";
+    if (document.querySelector(productsSection) != null) {
+
+        const sliderProducts = new Swiper(productsSection + ' .swiper-container', {
+
+            direction: 'horizontal',
+            slidesPerView: 1,
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            // spaceBetween: 32,
+            spaceBetween: 0,
+            mousewheel: true,
+            loopAdditionalSlides: 6,
+            loopedSlides: 6,
+            loop: true,
+            slideToClickedSlide: true,
+
+            navigation: {
+                nextEl: productsSection + ' .slider__next',
+                prevEl: productsSection + ' .slider__prev'
+            },
+            on: {
+                slideChange: function () {
+                    setTimeout(() => {
+                        let activeIndex = jQuery(productsSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex+=1;
+
+                        let slides = jQuery(productsSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+                        if(jQuery(productsSection + ' .swiper-slide-active').hasClass('swiper-slide-duplicate')) activeIndex -= slides;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
+                        slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
+                        document.querySelector(productsSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+                    }, 300);
+                },
+                resize: function () {
+                    setTimeout(() => {
+                        let activeIndex = jQuery(productsSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
+                        activeIndex+=1;
+
+                        let slides = jQuery(productsSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+                        if(jQuery(productsSection + ' .swiper-slide-active').hasClass('swiper-slide-duplicate')) activeIndex -= slides;
+                        activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
+                        slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
+                        document.querySelector(productsSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+                    }, 300);
+                }
+
+
+            },
+            grabCursor: true,
+            breakpoints: {
+                0: {
+                    direction: 'horizontal',
+                },
+                768: {
+                    direction: 'horizontal',
+                    slidesPerView: 3,
+                    loop: document.querySelectorAll(productsSection + ' .swiper-slide').length > 3 * 2
+                }
+            }
+        });
+        // sliderProducts.loopDestroy();
+        // sliderProducts.loopCreate();
     }
 
 }

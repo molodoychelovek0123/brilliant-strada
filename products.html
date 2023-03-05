@@ -103,7 +103,7 @@
                 </header>
                 <div class="scrollable-mask">
                     <div class="scrollable-content masked-content">
-                        <div class="lookbook-slider">
+                        <div class="products-slider">
                             <a href="lookbook.html" class="back-button">
                                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.6" d="M4.66667 12H7V9.6H5.83333V8.4H4.66667V7.2H3.5V4.8H4.66667V3.6H5.83333V2.4H7V0H4.66667V1.2H3.5V2.4H2.33333V3.6H1.16667V4.8H0V7.2H1.16667V8.4H2.33333V9.6H3.5V10.8H4.66667V12Z" fill="white"/>
@@ -114,7 +114,78 @@
                             </a>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide" data-swiper-slide-index="1">
+                                <!-- TODO: for Игорь Здесь обязательный отсчет от 0-->
+                                <!-- Здесь еще ебанистическая система дубликатов, лучше спроси меня как ето сделать -->
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="0">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/longsleeve1.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve1.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/longsleeve1.png')">
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="1">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/longsleeve2.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve2.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/longsleeve2.png')">
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="2">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/longsleeve3.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve3.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/longsleeve3.png')">
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="3">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/longsleeve4.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve4.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/longsleeve4.png')">
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="4">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/longsleeve1.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve1.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/longsleeve1.png')"></div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide" href="product.html" data-swiper-slide-index="5">
                                         <div class="slider__image glitched">
                                             <picture>
                                                 <source srcset="./assets/img/lookbook1.png" media="(min-width:600px)">
@@ -123,129 +194,109 @@
                                                  style="background-image:url('assets/img/lookbook1.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="2">
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="0">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook2.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook2.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/longsleeve1.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve1.png" alt="asas"></picture>
                                             <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook2.png')">
+                                                 style="background-image:url('assets/img/longsleeve1.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="3">
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="1">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook3.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook3.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/longsleeve2.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve2.png" alt="asas"></picture>
                                             <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook3.png')">
+                                                 style="background-image:url('assets/img/longsleeve2.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="4">
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="2">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook4.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook4.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/longsleeve3.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve3.png" alt="asas"></picture>
                                             <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook4.png')">
+                                                 style="background-image:url('assets/img/longsleeve3.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="5">
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="3">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook5.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook5.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/longsleeve4.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve4.png" alt="asas"></picture>
                                             <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook5.png')">
+                                                 style="background-image:url('assets/img/longsleeve4.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="6">
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="4">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook6.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook6.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/longsleeve1.png" media="(min-width:600px)">
+                                                <img src="./assets/img/longsleeve1.png" alt="asas"></picture>
                                             <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook6.png')">
+                                                 style="background-image:url('assets/img/longsleeve1.png')"></div>
+                                        </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
+                                        </div>
+                                    </a>
+                                    <a class="swiper-slide swiper-slide-duplicate"  href="product.html" data-swiper-slide-index="5">
+                                        <div class="slider__image glitched">
+                                            <picture>
+                                                <source srcset="./assets/img/lookbook1.png" media="(min-width:600px)">
+                                                <img src="./assets/img/lookbook1.png" alt="asas"></picture>
+                                            <div class="glitch"
+                                                 style="background-image:url('assets/img/lookbook1.png')">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="7">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook7.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook7.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook7.png')">
-                                            </div>
+                                        <div class="text-content">
+                                            <h2>DOUBLE SLEEVES</h2>
+                                            <h2>$230</h2>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="8">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook8.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook8.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook8.png')">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="9">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook9.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook9.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook9.png')">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="10">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook10.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook10.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook10.png')">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="11">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook11.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook11.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook11.png')">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide" data-swiper-slide-index="12">
-                                        <div class="slider__image glitched">
-                                            <picture>
-                                                <source srcset="./assets/img/lookbook12.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook12.png" alt="asas"></picture>
-                                            <div class="glitch"
-                                                 style="background-image:url('assets/img/lookbook12.png')"></div>
-                                        </div>
-                                    </div>   
+                                    </a>
                                 </div>
-                            </div>
+                                </div>
                             <div class="slider__nav">
 
                                 <div class="slider__prev"></div>
 
                                 <!-- TODO: for Igor Добавить подсчет кол-ва слайдов и добавить текст внутрь slider__fraction -- 01/{{slider.length}} -->
                                 <div class="slider__fraction">
-                                    01/12
+                                    01/06
                                 </div>
 
                                 <div class="slider__next"></div>
                             </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -469,7 +520,8 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.1.0/swiper-bundle.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 <script src="assets/js/slider.js"></script>
 <script src="assets/js/custom-select.js"></script>
