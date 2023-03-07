@@ -1,0 +1,61 @@
+table {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 10px;
+
+  tr {
+    height: 15vh;
+
+    &.heading-row{
+      height: auto;
+      th{
+        .cell-content{
+          height: auto;
+        }
+      }
+    }
+    th, td {
+      padding: 14px 25px;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      &:last-child{
+        border-right: 0;
+      }
+      .cell-content{
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+      &.item{
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+      &.size,
+      &.quantity,
+      &.price{
+        max-width: 111px;
+      }
+    }
+    &:last-child{
+
+      th, td {
+        border-bottom: none;
+      }
+    }
+  }
+  &.size-chart{
+    tr {
+      height: auto;
+      th,td{
+        white-space: nowrap;
+        .cell-content{
+          height: auto;
+        }
+      }
+    }
+  }
+}

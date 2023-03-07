@@ -35,7 +35,7 @@
       box-sizing: border-box;
       padding-bottom: 50px;
     }
-    .scrollable-content {
+    .scrollable-content, .horizontal-scroll {
       max-height: 100%;
       overflow-x: hidden;
       overflow-y: auto;
@@ -50,6 +50,7 @@
       &::-webkit-scrollbar {
         width: 8px;
         width: 8px;
+        height: 8px;
       }
 
       &::-webkit-scrollbar-track {
@@ -77,6 +78,10 @@
       &::-webkit-scrollbar-thumb:active {
         background-color: #FFFFFF;
       }
+    }
+    .horizontal-scroll{
+      overflow-x: auto;
+      padding-bottom: 20px;
     }
   }
 }
