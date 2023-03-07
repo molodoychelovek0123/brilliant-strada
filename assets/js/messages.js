@@ -27,4 +27,3 @@ function showMessage(type, message, code, inScreen = true) {
                         </div>`;
     container.append(html);
 }
-

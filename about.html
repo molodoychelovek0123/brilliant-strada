@@ -103,7 +103,7 @@
                 </header>
                 <div class="scrollable-mask">
                     <div class="scrollable-content masked-content">
-                        <div class="about-page">
+                        <div class="about-page page-with-qr">
                             <section>
                                 <h2 class="h1">
                                     <img src="./assets/img/earth.svg" alt="ALT TEXT">
@@ -131,27 +131,27 @@
                                     </h2>
                                     <div class="row social-row ">
                                         <a href="mailto:support@brilliantstrada.com">support@brilliantstrada.com</a>
-                                        <a href="https://instagram.com/brilliantstrada.com" class="qr">
+                                        <p data-href="https://instagram.com/brilliantstrada.com" class="qr">
                                             instagram
-                                            <a href="https://instagram.com/brilliantstrada.com" class="qr__generated">
-                                                <img src="{{generateQR(https://instagram.com/brilliantstrada.com)}}"
+                                            <span class="qr__generated">
+                                                <img src="./assets/img/qr-code.jpg"
                                                      alt="">
-                                            </a>
-                                        </a>
-                                        <a href="https://instagram.com/brilliantstrada.com" class="qr">
+                                            </span>
+                                        </p>
+                                        <p data-href="https://instagram.com/brilliantstrada.com" class="qr">
                                             vk
-                                            <a href="https://instagram.com/brilliantstrada.com" class="qr__generated">
+                                            <span class="qr__generated">
                                                 <img src="{{generateQR(https://instagram.com/brilliantstrada.com)}}"
                                                      alt="">
-                                            </a>
-                                        </a>
-                                        <a href="https://instagram.com/brilliantstrada.com" class="qr">
+                                            </span>
+                                        </p>
+                                        <p data-href="https://instagram.com/brilliantstrada.com" class="qr">
                                             telegram
-                                            <a href="https://instagram.com/brilliantstrada.com" class="qr__generated">
+                                            <span class="qr__generated">
                                                 <img src="{{generateQR(https://instagram.com/brilliantstrada.com)}}"
                                                      alt="">
-                                            </a>
-                                        </a>
+                                            </span>
+                                        </p>
                                     </div>
                                 </section>
                                 <section class="working-hours">
@@ -749,6 +749,7 @@
 <script src="assets/js/turn-on-off.js"></script>
 <script src="assets/js/messages.js"></script>
 <script src="assets/js/add-to-cart.js"></script>
+<script src="assets/js/qr-codes.js"></script>
 <script src="assets/js/init.js"></script>
 <script src="assets/js/transition.js"></script>
 

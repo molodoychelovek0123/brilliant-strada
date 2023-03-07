@@ -32,12 +32,43 @@
     .social-row {
       flex-wrap: nowrap;
       justify-content: flex-start;
-      a {
+      a,p {
         margin-right: 20px;
         text-transform: uppercase;
-        .qr{
-          &__generated{
-            display: none;
+      }
+      .qr{
+        position: relative;
+        cursor: pointer;
+        &__generated{
+          $arrow-width: 18px;
+          $arrow-height: 12px;  // Тут высота получается $arrow-width + $arrow-height / 2 -- среднее арифметическое
+          position: absolute;
+          width: 98px;
+          height: 98px;
+          left: 50%;
+          top: calc(#{($arrow-width + $arrow-height) / 2}  * 2);
+          transform: translateX(-50%);
+          opacity: 0;
+          pointer-events: none;
+          transition: all .3s ease-in-out;
+          &::after{
+            content:" ";
+            position: absolute;
+            top: calc(#{($arrow-width + $arrow-height) / 2} * -2);
+            left: 50%;
+            transform: translateX(-50%);
+            border: #{$arrow-width} solid transparent;
+            border-bottom: #{$arrow-height} solid #607ca1;
+          }
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+          //display: none;
+          &.active{
+            opacity: 1;
+            pointer-events: all;
           }
         }
       }
