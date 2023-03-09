@@ -10,14 +10,23 @@ function changePageTo(url){
         xhr.onload = function() {
             try {
                 let newContent = xhr.response.querySelector('.screen').innerHTML;
+                let s = xhr.response.querySelector('.screen .music');
+
                 document.querySelector('.screen').innerHTML = newContent;
                 initAll();
+
 
                 // window.addEventListener('load', function() {
                 //     console.log("wtf??");
                 setTimeout(() => {
                     turnOn();
                 }, 500);
+
+                setTimeout(()=>{
+                    if(s){
+                        playSound(s.getAttribute("data-sound-name"));
+                    }
+                }, 900);
                 // });
 
                 // Change link in browser address bar

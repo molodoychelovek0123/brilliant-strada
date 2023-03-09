@@ -1,3 +1,59 @@
 .cart-page {
+  .mobile-cart{
+    font-size: 16px;
+    font-family: 'Classic Console Neue', 'ClassicConsoleNeue', sans-serif;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    .cell-content{
+      padding: 11px 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      gap: 10px;
+      &.item{
+        border-right: none;
+        img{
+          height: 100%;
+          width: auto;
 
+        }
+      }
+      div{
+        //line-height: 0;
+      }
+    }
+    .row{
+      display: flex;
+
+    }
+    &__head{
+      //border-bottom: 1px solid #fff;
+    }
+    &__item{
+      &:last-child {
+        .row {
+          &:last-child {
+            .mobile-cart__options {
+              .cell-content {
+                &:last-child {
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__options{
+      flex: 1 1 0;
+      width: 0;
+      &:last-child{
+        .cell-content {
+          border-right: none;
+        }
+      }
+    }
+  }
 }

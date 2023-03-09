@@ -40,6 +40,7 @@ function setMusicSrc(src) {
 
 function setVolume(val) {
     document.getElementById(idAudioBlock).volume = val / 100;
+    // jQuery('')
 }
 
 function startStopAudio() {
@@ -69,4 +70,18 @@ function setClasses() {
 
 function isPlaying() {
     return document.getElementById(idAudioBlock).duration > 0 && !document.getElementById(idAudioBlock).paused;
+}
+
+
+
+
+function playSound(selector){
+    try {
+        const sound = document.getElementById(selector);
+        sound.currentTime = 0;
+        sound.play();
+    }
+    catch (e){
+        console.warn(e);
+    }
 }

@@ -1,21 +1,15 @@
-<!--
-Добавил Header
-Добавил Корзина
-Добавил menu
-Добавил Новые стили
-Добавил js
-Добавил одну тудушку на slider__fraction
-Добавлено два message-container
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
+<audio src="assets/audio/lookbooknext.wav" id="lookbook-next"></audio>
+<audio src="assets/audio/lookbookprev.wav" id="lookbook-prev"></audio>
+
 <div class="page">
     <div class="content">
         <div class="background">
@@ -102,7 +96,7 @@
                     </div>
                 </header>
                 <div class="scrollable-mask">
-                    <div class="scrollable-content masked-content">
+                    <div class="scrollable-content masked-content lookbook-page lookbook-inner">
                         <div class="lookbook-slider">
                             <a href="lookbook.html" class="back-button">
                                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -112,6 +106,8 @@
                                         back to lookbook
                                 </span>
                             </a>
+
+                            <h2 class="mobile-title"> INTERSTELLAR </h2>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <!-- TODO: for Игорь Здесь обязательный отсчет от 0-->
@@ -119,10 +115,12 @@
                                     <div class="swiper-slide" data-swiper-slide-index="0">
                                         <div class="slider__image glitched">
                                             <picture>
-                                                <source srcset="./assets/img/lookbook12.png" media="(min-width:600px)">
-                                                <img src="./assets/img/lookbook12.png" alt="asas"></picture>
+                                                <source srcset="./assets/img/lookbook12.png" media="(min-width:600px)"> <!-- Ссылка на большое изображение -->
+                                                <img src="./assets/img/lookbook12.png" alt="asas"> <!-- Ссылка на маленькое изображение -->
+                                            </picture>
                                             <div class="glitch"
                                                  style="background-image:url('assets/img/lookbook1.png')">
+                                                <!-- Здесь бы засунуть обработчик который выбирает в bg-image изображения в зависимости от использованого устройства -->
                                             </div>
                                         </div>
                                     </div>
@@ -481,6 +479,7 @@
 <script src="assets/js/music-control.js"></script>
 <script src="assets/js/turn-on-off.js"></script>
 <script src="assets/js/messages.js"></script>
+<script src="assets/js/qr-codes.js"></script>
 <script src="assets/js/add-to-cart.js"></script>
 <script src="assets/js/init.js"></script>
 <script src="assets/js/transition.js"></script>

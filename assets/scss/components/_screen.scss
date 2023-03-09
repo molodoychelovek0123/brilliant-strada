@@ -1,9 +1,45 @@
+@mixin screenHeightResponsive {
+  @media only screen and (max-height: 970px){
+    padding-top: calc(10px + (80 - 10) * ((100vh - 200px) / (970 - 200)));
+  }
+}
+
+@mixin fuckedMaskedGradient($height) {
+  -webkit-mask-image: -webkit-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+  -webkit-mask-image: linear-gradient(180deg, transparent  #{$height*3/4}, black #{$height*1.75});
+  -webkit-mask-image: -moz-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+  -webkit-mask-image: -o-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+  mask-image: linear-gradient(180deg, transparent  #{$height*3/4}, black #{$height*1.75});
+  mask-image: -webkit-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+  mask-image: -o-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+  mask-image: -moz-linear-gradient(top, transparent  #{$height*3/4}, black #{$height*1.75});
+}
+
+
 .screen {
-  padding: 80px 131px 20px;
+  //padding: 80px 131px 20px;
+  padding: 80px calc(20px + (85 - 20) * ((100vw - 200px) / (991 - 200))) 20px;
   height: 100%;
   width: 100%;
   box-sizing: border-box;
   animation: jerkup 0.07s infinite;
+  @include upToLarge{
+    @include screenHeightResponsive
+  }
+  //@media #{$small-only}{
+  //}
+  //@media #{$medium-only}{
+  //  @include screenHeightResponsive
+  //}
+
+  @media #{$large-up}{
+    padding: 80px 131px 20px;
+  }
+  @media #{$xxlarge-up}{
+    padding-left: calc(130px + (160 - 130) * ((100vw - 1600px) / (1920 - 1600)));
+    padding-right: calc(130px + (160 - 130) * ((100vw - 1600px) / (1920 - 1600)));
+  }
+
 
   .scrollable-mask {
     //-webkit-mask-image: -webkit-linear-gradient(top, transparent calc( #{$header-height-desktop} - 25px ), black 200px);
@@ -15,14 +51,22 @@
     //        mask-image: -o-linear-gradient(top, transparent calc( #{$header-height-desktop} - 25px ), black 200px);
     //        mask-image: -moz-linear-gradient(top, transparent calc( #{$header-height-desktop} - 25px ), black 200px);
 
-    -webkit-mask-image: -webkit-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    -webkit-mask-image: linear-gradient(180deg, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    -webkit-mask-image: -moz-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    -webkit-mask-image: -o-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    mask-image: linear-gradient(180deg, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    mask-image: -webkit-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    mask-image: -o-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
-    mask-image: -moz-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+
+    @include fuckedMaskedGradient($header-height);
+
+    @media #{$large-up}{
+
+      @include fuckedMaskedGradient($header-height-desktop);
+      //-webkit-mask-image: -webkit-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //-webkit-mask-image: linear-gradient(180deg, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //-webkit-mask-image: -moz-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //-webkit-mask-image: -o-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //mask-image: linear-gradient(180deg, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //mask-image: -webkit-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //mask-image: -o-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+      //mask-image: -moz-linear-gradient(top, transparent  #{$header-height-desktop*3/4}, black #{$header-height-desktop*1.75});
+
+    }
 
     height: 100%;
     max-height: 100%;
@@ -31,7 +75,10 @@
 
     .masked-content{
       max-height: 100%;
-      padding-top: #{$header-height-desktop*5/4};
+      padding-top: #{$header-height*6/4};
+      @media #{$large-up}{
+        padding-top: #{$header-height-desktop*5/4};
+      }
       box-sizing: border-box;
       padding-bottom: 50px;
     }
@@ -40,43 +87,45 @@
       overflow-x: hidden;
       overflow-y: auto;
       box-sizing: border-box;
-      /* Firefox */
-      & {
-        scrollbar-width: thin;
-        scrollbar-color: #FFFFFF #FFFFFF4C;
-      }
+      @media #{$medium-up}{
+        /* Firefox */
+        & {
+          scrollbar-width: thin;
+          scrollbar-color: #FFFFFF #FFFFFF4C;
+        }
 
-      /* Chrome, Edge and Safari */
-      &::-webkit-scrollbar {
-        width: 8px;
-        width: 8px;
-        height: 8px;
-      }
+        /* Chrome, Edge and Safari */
+        &::-webkit-scrollbar {
+          width: 8px;
+          width: 8px;
+          height: 8px;
+        }
 
-      &::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.3);
-      }
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.3);
+        }
 
-      &::-webkit-scrollbar-track:hover {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
+        &::-webkit-scrollbar-track:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
 
-      &::-webkit-scrollbar-track:active {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
+        &::-webkit-scrollbar-track:active {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
 
-      &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: #FFFFFF;
-      }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background-color: #FFFFFF;
+        }
 
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: #FFFFFF;
-      }
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: #FFFFFF;
+        }
 
-      &::-webkit-scrollbar-thumb:active {
-        background-color: #FFFFFF;
+        &::-webkit-scrollbar-thumb:active {
+          background-color: #FFFFFF;
+        }
       }
     }
     .horizontal-scroll{

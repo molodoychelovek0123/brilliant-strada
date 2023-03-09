@@ -1,18 +1,42 @@
 .product-page{
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   height: calc(100% + 40px);
   max-height: calc(100%  + 40px);
   padding-bottom: 40px;
+  @media #{$large-up}{
+    flex-direction: row;
+  }
   .slider{
     flex: 1;
     @media #{$large-up}{
       flex: 0 0 calc(50% - 0px);
     }
   }
+  // Чтобы работал нормально скролл на мобилке
+  &.masked-content{
+    @include upToLarge{
+      max-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .scrollable-content{
+      @include upToLarge{
+        overflow-x: visible;
+        overflow-y: visible;
+        box-sizing: border-box;
+        max-height: fit-content;
+        height: fit-content;
+      }
+    }
+  }
   .scrollable-content{
     flex: 1;
     z-index: 4;
+
     @media #{$large-up}{
       padding-left: 50px;
       padding-top: 50px;
@@ -22,8 +46,21 @@
     //  height: calc(100vh - #{$header-height-desktop});
     //}
     height: 100%;
+    h1{
+      margin-bottom: 15px;
+    }
+    h2{
+      margin-bottom: 20px;
+    }
+    .short-description{
+      line-height: 130%;
+      letter-spacing: -0.05em;
+      margin-bottom: 25px;
+    }
+
   }
   .product-options{
+    margin-bottom: 24px;
     .row{
       display: flex;
       flex-direction: row;
@@ -31,7 +68,7 @@
       flex-wrap: wrap;
     }
     &__title{
-
+      margin-bottom: 15px;
     }
     &__item{
       width: 61px;
@@ -57,6 +94,13 @@
   }
   .product-actions{
     display: flex;
+    gap:10px;
+    margin-bottom: 25px;
+    label{
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
     input[type=submit]{
       background: #000000;
       border: 1px solid #FFFFFF;

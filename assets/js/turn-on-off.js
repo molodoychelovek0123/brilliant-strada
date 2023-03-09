@@ -53,7 +53,10 @@ function hidePreloader(){
     function runLoader(){
         document.querySelector('.preloader').classList.add('animated');
         setTimeout(()=>{
-
+            turnOff();
+            setTimeout(()=>{
+                turnOn();
+            }, 400);
             document.querySelector('.preloader').classList.add('hidden');
             setTimeout(()=>{
                 hidePreloader();

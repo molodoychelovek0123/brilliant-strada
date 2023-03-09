@@ -5,8 +5,8 @@ function initProductSlider() {
         const sliderThumbs = new Swiper('.slider__thumbs .swiper-container', {
 
             direction: 'vertical',
-            slidesPerView: 4,
-            spaceBetween: 24,
+            slidesPerView: 5,
+            spaceBetween: 8,
             navigation: {
                 nextEl: 'section.slider .slider__next',
                 prevEl: 'section.slider .slider__prev'
@@ -17,6 +17,7 @@ function initProductSlider() {
                     direction: 'horizontal',
                 },
                 768: {
+                    slidesPerView: 4,
                     direction: 'vertical',
                 }
             }
@@ -138,11 +139,13 @@ function initProductSlider() {
         jQuery('.media-modal .close').on('click',function (){
             jQuery('.media-modal').removeClass('active');
         });
+        jQuery('.media-modal').css({'display' : 'block'});
     }
 
     const lookbookSection = ".lookbook-slider";
-    if (document.querySelector(lookbookSection) != null) {
 
+    if (document.querySelector(lookbookSection) != null) {
+        let previousIndex = -1;
         const sliderLookbook = new Swiper(lookbookSection + ' .swiper-container', {
 
             direction: 'horizontal',
@@ -153,24 +156,44 @@ function initProductSlider() {
             // spaceBetween: 32,
             spaceBetween: 0,
             mousewheel: true,
-            loopedSlides: 12,
+            loopedSlides: 3,
+            // loopedSlides: 12,
 
             navigation: {
                 nextEl: lookbookSection + ' .slider__next',
                 prevEl: lookbookSection + ' .slider__prev'
             },
             on: {
-                slideChange: function () {
+                slideChange: function  (sw){
+                    // console.log(sw);
+                    // console.log(sw.activeIndex, sw.previousIndex);
+                    // if(sw.activeIndex !== sw.previousIndex) {
+                    //     if (sw.activeIndex > sw.previousIndex)
+                    //         playSound("lookbook-next");
+                    //     else
+                    //         playSound("lookbook-prev");
+                    // }
+
+
                     setTimeout(() => {
                         let activeIndex = jQuery(lookbookSection + ' .swiper-slide-active').attr('data-swiper-slide-index') - 1 + 1;
-                        activeIndex+=1;
-
                         let slides = jQuery(lookbookSection + ' .swiper-slide:not(.swiper-slide-duplicate)').length;
+
+                        activeIndex+=1;
+                        if(activeIndex !== previousIndex && previousIndex !== -1) {
+                            if (activeIndex > previousIndex || (activeIndex === 1 && previousIndex === slides))
+                                playSound("lookbook-next");
+                            else
+                                playSound("lookbook-prev");
+                        }
+                        previousIndex = activeIndex;
+
 
                         if(jQuery(productsSection + ' .swiper-slide-active').hasClass('swiper-slide-duplicate')) activeIndex -= slides;
                         activeIndex = Math.ceil((activeIndex)) < 10 ? "0" + Math.ceil((activeIndex)) : +Math.ceil((activeIndex));
                         slides = Math.ceil((slides)) < 10 ? "0" + Math.ceil((slides)) : +Math.ceil((slides));
                         document.querySelector(lookbookSection + ' .slider__fraction').innerHTML = activeIndex + '/' + slides;
+
                     }, 300);
                 },
                 resize: function () {
@@ -201,6 +224,11 @@ function initProductSlider() {
                 }
             }
         });
+        setTimeout(()=>{
+            if(document.querySelector(lookbookSection + " .swiper-initialized") != null){
+                document.querySelector('.scrollable-mask').classList.add('lookbook-mask')
+            }
+        },300);
     }
 
 
@@ -216,8 +244,8 @@ function initProductSlider() {
             // spaceBetween: 32,
             spaceBetween: 0,
             mousewheel: true,
-            loopAdditionalSlides: 6,
-            loopedSlides: 6,
+            // loopAdditionalSlides: 6,
+            // loopedSlides: 6,
             loop: true,
             slideToClickedSlide: true,
 

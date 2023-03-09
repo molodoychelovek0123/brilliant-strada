@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 <div class="page">
@@ -27,15 +29,31 @@
                             <img src="assets/img/logo.png" alt="Logotype">
                         </a>
                         <h1 class="big-title">LOOKBOOK</h1>
-                        <a href="/cart" class="cart">
-                            <img src="assets/img/cart.png" alt="Cart">
-                            <p class="h2">CART</p>
+                        <a href="#"
+                           class="music">
+                            <img src="assets/img/music.svg" alt="Music Controls" class="music-image">
+                            <p class="h2">
+                                <span>MUSIC</span>
+                            </p>
+                        </a>
+                        <a href="/cart.html"
+                           class="cart" data-count="0">
+                            <img src="assets/img/cart.png" alt="Cart" class="cart-open">
+                            <img src="assets/img/cart-close.png" alt="Cart" class="cart-close">
+                            <p class="h2">
+
+                                <span>CART</span>
+                                <span class="badge">
+                                    <span class="text"> 0 </span>
+                                </span>
+                            </p>
                         </a>
                     </div>
                 </header>
 
                 <div class="scrollable-mask">
-                <div class="scrollable-content masked-content lookbook-page">
+                    <div class="scrollable-content masked-content lookbook-page">
+                        <h2 class="mobile-title"> COLLECTIONS </h2>
                     <div class="lookbook">
                         <div class="row">
                             <!-- Количество элементов должно быть кратно 4 -->

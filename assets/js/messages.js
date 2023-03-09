@@ -7,9 +7,23 @@ const Types = Object.freeze({
 });
 
 function initMessageContainer() {
-    $('.message-container').on('click', function (event) {
-        $(event.target).remove();
-    })
+    document.querySelector('.screen .message-container').addEventListener("click",function(e){
+        if(e.target.classList.contains('message')) {
+            e.target.parentNode.removeChild(e.target);
+            playSound('info');
+        }
+    });
+    document.querySelector('.message-container.out-of-screen').addEventListener("click",function(e){
+        if(e.target.classList.contains('message')) {
+            e.target.parentNode.removeChild(e.target);
+            playSound('info');
+        }
+    });
+
+    // $('.message-container').on('click', function (event) {
+    //     console.log(event);
+    //     $(event.target).remove();
+    // })
 }
 
 function showMessage(type, message, code, inScreen = true) {

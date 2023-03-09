@@ -54,7 +54,7 @@
           &::after{
             content:" ";
             position: absolute;
-            top: calc(#{($arrow-width + $arrow-height) / 2} * -2);
+            top: calc(calc(#{($arrow-width + $arrow-height) / 2} * -2) + 1px);
             left: 50%;
             transform: translateX(-50%);
             border: #{$arrow-width} solid transparent;
